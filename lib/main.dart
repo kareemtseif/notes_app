@@ -13,6 +13,7 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Poppins',
         appBarTheme: const AppBarTheme(
           color: Color(0xff303030),
         ),

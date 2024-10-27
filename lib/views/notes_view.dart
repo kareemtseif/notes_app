@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_note_item.dart';
 import 'package:notes_app/widgets/custom_search_button.dart';
 
 class NotesView extends StatelessWidget {
@@ -21,6 +22,14 @@ class NotesView extends StatelessWidget {
         actions: const [
           CustomSearchButton(),
         ],
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            CustomNoteItem(),
+          ],
+        ),
       ),
     );
   }
