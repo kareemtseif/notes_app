@@ -15,7 +15,9 @@ class NotesApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
         appBarTheme: const AppBarTheme(
-          color: Color(0xff303030),
+          foregroundColor: Colors.white,
+          backgroundColor: Color(0xff303030),
+          scrolledUnderElevation: 0,
         ),
         scaffoldBackgroundColor: const Color(0xff303030),
         brightness: Brightness.dark,

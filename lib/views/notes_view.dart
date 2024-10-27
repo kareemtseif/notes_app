@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/custom_note_item.dart';
 import 'package:notes_app/widgets/custom_search_button.dart';
+import 'package:notes_app/widgets/notes_list_view.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -10,27 +10,12 @@ class NotesView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Padding(
-          padding: EdgeInsets.only(left: 8, top: 8),
-          child: Text(
-            'Notes',
-            style: TextStyle(
-              fontSize: 28,
-              color: Colors.white,
-            ),
-          ),
+          padding: EdgeInsets.only(left: 8),
+          child: Text('Notes', style: TextStyle(fontSize: 28)),
         ),
-        actions: const [
-          CustomSearchButton(),
-        ],
+        actions: const [CustomSearchButton()],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            CustomNoteItem(),
-          ],
-        ),
-      ),
+      body: const NotesListView(),
     );
   }
 }
