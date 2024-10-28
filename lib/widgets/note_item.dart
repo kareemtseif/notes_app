@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -15,29 +16,40 @@ class NoteItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          ListTile(
-            title: const Text(
-              'Flutter Tips',
-              style: TextStyle(
-                fontSize: 28,
-                color: Colors.black,
-              ),
-            ),
-            subtitle: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: Text(
-                'Build your carrer with Tharwat Samy',
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const EditNoteView();
+                  },
+                ),
+              );
+            },
+            child: ListTile(
+              title: const Text(
+                'Flutter Tips',
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xff946D30),
+                  fontSize: 28,
+                  color: Colors.black,
                 ),
               ),
-            ),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                FontAwesomeIcons.trash,
-                color: Colors.black,
+              subtitle: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                child: Text(
+                  'Build your carrer with Tharwat Samy',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Color(0xff946D30),
+                  ),
+                ),
+              ),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  FontAwesomeIcons.trash,
+                  color: Colors.black,
+                ),
               ),
             ),
           ),
