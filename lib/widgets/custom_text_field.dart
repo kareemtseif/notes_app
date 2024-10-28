@@ -4,15 +4,16 @@ import 'package:notes_app/constant.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
-    this.verticalPadding = 16,
     required this.hintText,
+    this.maxLines = 1,
   });
-  final double verticalPadding;
   final String hintText;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: maxLines,
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(
         border: OutlineInputBorder(
@@ -22,8 +23,6 @@ class CustomTextField extends StatelessWidget {
         hintStyle: const TextStyle(
           color: kPrimaryColor,
         ),
-        contentPadding:
-            EdgeInsets.symmetric(vertical: verticalPadding, horizontal: 16),
         enabledBorder: border(Colors.white),
         focusedBorder: border(),
       ),
