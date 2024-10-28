@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constant.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 void main() {
@@ -13,8 +14,14 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        bottomSheetTheme: BottomSheetThemeData(
+          modalBackgroundColor: const Color(0xff303030),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Color(0xff54EED5),
+          backgroundColor: kPrimaryColor,
           foregroundColor: Colors.black,
         ),
         useMaterial3: true,
