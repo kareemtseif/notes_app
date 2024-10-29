@@ -6,24 +6,26 @@ class EditNoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: ListView(
-        children: const [
-          SizedBox(
-            height: 25,
-          ),
-          CustomTextField(
-            hintText: 'Title',
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            hintText: 'Content',
-            maxLines: 6,
-          ),
-        ],
+    return const Padding(
+      padding: EdgeInsets.all(16),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 25,
+            ),
+            CustomTextField(
+              hintText: 'Title',
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            CustomTextField(
+              hintText: 'Content',
+              maxLines: 6,
+            ),
+          ],
+        ),
       ),
     );
   }
