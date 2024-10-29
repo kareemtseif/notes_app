@@ -21,35 +21,30 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => AddNoteCubit()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          bottomSheetTheme: BottomSheetThemeData(
-            modalBackgroundColor: const Color(0xff303030),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        bottomSheetTheme: BottomSheetThemeData(
+          modalBackgroundColor: const Color(0xff303030),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
           ),
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: kPrimaryColor,
-            foregroundColor: Colors.black,
-          ),
-          useMaterial3: true,
-          fontFamily: 'Poppins',
-          appBarTheme: const AppBarTheme(
-            foregroundColor: Colors.white,
-            backgroundColor: Color(0xff303030),
-            scrolledUnderElevation: 0,
-          ),
-          scaffoldBackgroundColor: const Color(0xff303030),
-          brightness: Brightness.dark,
         ),
-        home: const NotesView(),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: kPrimaryColor,
+          foregroundColor: Colors.black,
+        ),
+        useMaterial3: true,
+        fontFamily: 'Poppins',
+        appBarTheme: const AppBarTheme(
+          foregroundColor: Colors.white,
+          backgroundColor: Color(0xff303030),
+          scrolledUnderElevation: 0,
+        ),
+        scaffoldBackgroundColor: const Color(0xff303030),
+        brightness: Brightness.dark,
       ),
+      home: const NotesView(),
     );
   }
 }
