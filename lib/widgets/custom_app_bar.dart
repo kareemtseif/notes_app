@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_icon_button.dart';
 
-AppBar customAppBar({required IconData icon, required String title}) {
+AppBar customAppBar({
+  required IconData icon,
+  required String title,
+  void Function()? onPressed,
+}) {
   return AppBar(
     automaticallyImplyLeading: false,
     title: Padding(
@@ -10,6 +14,7 @@ AppBar customAppBar({required IconData icon, required String title}) {
     ),
     actions: [
       CustomIconButton(
+        onPressed: onPressed,
         icon: icon,
       )
     ],
