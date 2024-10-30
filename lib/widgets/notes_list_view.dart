@@ -18,9 +18,11 @@ class NotesListView extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: notes.length,
             itemBuilder: (BuildContext context, int index) {
-              return const Padding(
-                padding: EdgeInsets.only(bottom: 8),
-                child: NoteItem(),
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: NoteItem(
+                  note: notes[index],
+                ),
               );
             },
           ),

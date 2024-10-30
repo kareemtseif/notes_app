@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
       decoration: BoxDecoration(
-        color: const Color(0xffFFCD7A),
+        color: Color(note.color),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -27,20 +28,21 @@ class NoteItem extends StatelessWidget {
               );
             },
             child: ListTile(
-              title: const Text(
-                'Flutter Tips',
-                style: TextStyle(
+              title: Text(
+                note.title,
+                style: const TextStyle(
                   fontSize: 28,
                   color: Colors.black,
                 ),
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16),
+              subtitle: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  'Build your carrer with Tharwat Samy',
+                  note.subtitle,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Color(0xff946D30),
+                    // color: Color(0xff946D30),
+                    color: Colors.black.withOpacity(0.5),
                   ),
                 ),
               ),
@@ -53,13 +55,14 @@ class NoteItem extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(right: 24),
+          Padding(
+            padding: const EdgeInsets.only(right: 24),
             child: Text(
-              'May 21,2022',
+              note.date,
               style: TextStyle(
                 fontSize: 18,
-                color: Color(0xff946D30),
+                // color: Color(0xff946D30),
+                color: Colors.black.withOpacity(0.5),
               ),
             ),
           ),
