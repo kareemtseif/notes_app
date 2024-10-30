@@ -27,7 +27,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       child: Column(
         children: [
           const SizedBox(
-            height: 25,
+            height: 32,
           ),
           CustomTextField(
             maxLines: 1,
