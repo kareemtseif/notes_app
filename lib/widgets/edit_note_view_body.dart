@@ -53,7 +53,6 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                   subTitle = value;
                 },
                 hintText: widget.note.subtitle,
-                // maxLines: 6,
               ),
             ],
           ),

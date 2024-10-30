@@ -10,28 +10,28 @@ class NoteItem extends StatelessWidget {
   final NoteModel note;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
-      decoration: BoxDecoration(
-        color: Color(note.color),
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return EditNoteView(
-                      note: note,
-                    );
-                  },
-                ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return EditNoteView(
+                note: note,
               );
             },
-            child: ListTile(
+          ),
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
+        decoration: BoxDecoration(
+          color: Color(note.color),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            ListTile(
               title: Text(
                 note.title,
                 style: const TextStyle(
@@ -61,19 +61,19 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 24),
-            child: Text(
-              note.date,
-              style: TextStyle(
-                fontSize: 18,
-                // color: Color(0xff946D30),
-                color: Colors.black.withOpacity(0.5),
+            Padding(
+              padding: const EdgeInsets.only(right: 24),
+              child: Text(
+                note.date,
+                style: TextStyle(
+                  fontSize: 18,
+                  // color: Color(0xff946D30),
+                  color: Colors.black.withOpacity(0.5),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
